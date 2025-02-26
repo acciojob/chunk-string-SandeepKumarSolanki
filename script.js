@@ -1,15 +1,19 @@
 function stringChop(str, size) {
   // your code here
-	let arr = [];
-	for(let i = 0 ; i<str.length ; i=i+size){
-		if(size > str.length){
-			arr.push(str.substr(i, str.length))
-		}
-		let subStr = "";
-		subStr = slice(i,size);
-		arr.push(subStr);
-	}
-	return arr;
+	 if (!str) {
+    return [];
+  }
+
+  let arr = [];
+  
+  // Loop through the string in chunks of the given size
+  for (let i = 0; i < str.length; i += size) {
+    // Slice a chunk from the string and push to the array
+    let chunk = str.substr(i, size);
+    arr.push(chunk);
+  }
+  
+  return arr;
 }
 
 // Do not change the code below
